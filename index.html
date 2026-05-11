@@ -16,13 +16,26 @@
             display: flex;
             flex-direction: column;
         }
-        /* Contenedor de la página de Gamma */
-        .web-container {
+        
+        /* Contenedor especial para esconder el logo de Gamma abajo */
+        .iframe-wrapper {
             flex: 1;
             width: 100%;
-            border: none;
+            position: relative;
+            overflow: hidden;
         }
-        /* Barra de contacto profesional abajo */
+
+        /* Hacemos el mapa de Gamma un poquito más alto para empujar el logo fuera de la pantalla */
+        .web-container {
+            width: 100%;
+            height: calc(100% + 55px); /* Empuja el logo 55px hacia abajo */
+            border: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* Barra de contacto profesional que tapará cualquier intento de verse el logo */
         .contact-footer {
             background-color: #1a1a1a;
             border-top: 1px solid #333;
@@ -31,7 +44,10 @@
             justify-content: space-around;
             align-items: center;
             box-sizing: border-box;
+            z-index: 9999; /* Asegura que los botones queden siempre por encima */
+            position: relative;
         }
+
         .contact-button {
             display: flex;
             align-items: center;
@@ -44,6 +60,7 @@
             border-radius: 20px;
             transition: background 0.3s ease;
         }
+
         /* Botón de WhatsApp */
         .btn-whatsapp {
             background-color: #25D366;
@@ -52,6 +69,7 @@
         .btn-whatsapp:hover {
             background-color: #128C7E;
         }
+
         /* Botón de Correo */
         .btn-email {
             background-color: #ea4335;
@@ -60,6 +78,7 @@
         .btn-email:hover {
             background-color: #c5221f;
         }
+
         .icon {
             width: 20px;
             height: 20px;
@@ -68,7 +87,9 @@
 </head>
 <body>
 
-    <iframe class="web-container" src="https://mundo-magico-globos-iwe6g15.gamma.site/"></iframe>
+    <div class="iframe-wrapper">
+        <iframe class="web-container" src="https://mundo-magico-globos-iwe6g15.gamma.site/"></iframe>
+    </div>
 
     <footer class="contact-footer">
         <a href="https://wa.me/51913499450?text=Hola%20Aerium%20Creations,%20me%20gustaría%20cotizar%20un%20evento" target="_blank" class="contact-button btn-whatsapp">
@@ -76,7 +97,7 @@
             Escríbenos por WhatsApp
         </a>
 
-        <a href="mailto: aeriumcreations@gmail.com?subject=Cotización%20de%20Decoración" class="contact-button btn-email">
+        <a href="mailto:aeriumcreations@gmail.com?subject=Cotización%20de%20Decoración" class="contact-button btn-email">
             <img class="icon" src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
             Envíanos un Correo
         </a>
