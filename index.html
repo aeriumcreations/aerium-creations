@@ -17,7 +17,7 @@
             flex-direction: column;
         }
         
-        /* Contenedor especial para esconder el logo de Gamma abajo */
+        /* Contenedor del portafolio de Gamma */
         .iframe-wrapper {
             flex: 1;
             width: 100%;
@@ -25,40 +25,55 @@
             overflow: hidden;
         }
 
-        /* Hacemos el mapa de Gamma un poquito más alto para empujar el logo fuera de la pantalla */
         .web-container {
             width: 100%;
-            height: calc(100% + 55px); /* Empuja el logo 55px hacia abajo */
+            height: 100%;
             border: none;
             position: absolute;
             top: 0;
             left: 0;
         }
 
-        /* Barra de contacto profesional que tapará cualquier intento de verse el logo */
+        /* Bloqueador invisible que tapa físicamente la esquina del logo */
+        .gamma-blocker {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 180px; 
+            height: 60px;  
+            background-color: #121212; 
+            z-index: 999; 
+            pointer-events: auto; 
+        }
+
+        /* Barra de contacto profesional perfectamente alineada */
         .contact-footer {
             background-color: #1a1a1a;
             border-top: 1px solid #333;
-            padding: 12px 20px;
+            padding: 15px 20px;
             display: flex;
             justify-content: space-around;
             align-items: center;
             box-sizing: border-box;
-            z-index: 9999; /* Asegura que los botones queden siempre por encima */
+            z-index: 9999; 
             position: relative;
+            gap: 15px;
         }
 
         .contact-button {
             display: flex;
             align-items: center;
+            justify-content: center; /* Centra el contenido del botón */
             gap: 10px;
             text-decoration: none;
             color: #ffffff;
             font-size: 14px;
             font-weight: bold;
-            padding: 8px 16px;
-            border-radius: 20px;
+            padding: 10px 20px;
+            border-radius: 25px;
             transition: background 0.3s ease;
+            flex: 1; /* Hace que ambos botones tengan el mismo ancho */
+            max-width: 250px; /* Evita que se estiren demasiado en pantallas grandes */
         }
 
         /* Botón de WhatsApp */
@@ -79,9 +94,13 @@
             background-color: #c5221f;
         }
 
+        /* Estilo unificado para que los iconos midan exactamente lo mismo y se alineen al texto */
         .icon {
-            width: 20px;
-            height: 20px;
+            width: 22px;
+            height: 22px;
+            object-fit: contain; /* Evita que las imágenes se deformen */
+            display: inline-block;
+            vertical-align: middle;
         }
     </style>
 </head>
@@ -89,6 +108,7 @@
 
     <div class="iframe-wrapper">
         <iframe class="web-container" src="https://mundo-magico-globos-iwe6g15.gamma.site/"></iframe>
+        <div class="gamma-blocker"></div>
     </div>
 
     <footer class="contact-footer">
@@ -97,8 +117,8 @@
             Escríbenos por WhatsApp
         </a>
 
-        <a href="mailto:aeriumcreations@gmail.com?subject=Cotización%20de%20Decoración" class="contact-button btn-email">
-            <img class="icon" src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
+        <a href="mailto: aeriumcreations@gmail.com?subject=Cotización%20de%20Decoración" class="contact-button btn-email">
+            <img class="icon" src="https://cdn-icons-png.flaticon.com/512/5968/5968534.png" alt="Email">
             Envíanos un Correo
         </a>
     </footer>
