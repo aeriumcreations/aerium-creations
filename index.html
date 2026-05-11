@@ -34,46 +34,47 @@
             left: 0;
         }
 
-        /* Bloqueador invisible que tapa físicamente la esquina del logo */
+        /* Bloqueador mejorado para tapar el logo de Gamma por completo */
         .gamma-blocker {
             position: absolute;
             bottom: 0;
             right: 0;
-            width: 180px; 
-            height: 60px;  
+            width: 200px; /* Lo aumentamos de 180px a 200px */
+            height: 65px;  
             background-color: #121212; 
             z-index: 999; 
             pointer-events: auto; 
         }
 
-        /* Barra de contacto profesional perfectamente alineada */
+        /* Barra de contacto responsive */
         .contact-footer {
             background-color: #1a1a1a;
             border-top: 1px solid #333;
-            padding: 15px 20px;
+            padding: 10px 15px;
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             align-items: center;
             box-sizing: border-box;
             z-index: 9999; 
             position: relative;
-            gap: 15px;
+            gap: 10px;
         }
 
         .contact-button {
             display: flex;
             align-items: center;
-            justify-content: center; /* Centra el contenido del botón */
-            gap: 10px;
+            justify-content: center;
+            gap: 8px;
             text-decoration: none;
             color: #ffffff;
-            font-size: 14px;
+            font-size: 13px; /* Un pelín más pequeña para que quepan ambos en celular */
             font-weight: bold;
-            padding: 10px 20px;
+            padding: 10px 12px;
             border-radius: 25px;
             transition: background 0.3s ease;
-            flex: 1; /* Hace que ambos botones tengan el mismo ancho */
-            max-width: 250px; /* Evita que se estiren demasiado en pantallas grandes */
+            flex: 1; 
+            max-width: 200px; 
+            white-space: nowrap; /* Evita que el texto se rompa en dos líneas */
         }
 
         /* Botón de WhatsApp */
@@ -94,11 +95,10 @@
             background-color: #c5221f;
         }
 
-        /* Estilo unificado para que los iconos midan exactamente lo mismo y se alineen al texto */
         .icon {
-            width: 22px;
-            height: 22px;
-            object-fit: contain; /* Evita que las imágenes se deformen */
+            width: 18px;
+            height: 18px;
+            object-fit: contain;
             display: inline-block;
             vertical-align: middle;
         }
@@ -114,12 +114,12 @@
     <footer class="contact-footer">
         <a href="https://wa.me/51913499450?text=Hola%20Aerium%20Creations,%20me%20gustaría%20cotizar%20un%20evento" target="_blank" class="contact-button btn-whatsapp">
             <img class="icon" src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
-            Escríbenos por WhatsApp
+            WhatsApp
         </a>
 
         <a href="mailto: aeriumcreations@gmail.com?subject=Cotización%20de%20Decoración" class="contact-button btn-email">
             <img class="icon" src="https://cdn-icons-png.flaticon.com/512/5968/5968534.png" alt="Email">
-            Envíanos un Correo
+            Correo
         </a>
     </footer>
 
