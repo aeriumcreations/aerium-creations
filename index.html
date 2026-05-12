@@ -107,7 +107,11 @@
 <body>
 
     <div class="iframe-wrapper">
-        <iframe class="web-container" src="https://mundo-magico-globos-iwe6g15.gamma.site/" allow="web-share"></iframe>
+        <iframe id="gamma-page" class="web-container" 
+                src="https://mundo-magico-globos-iwe6g15.gamma.site/" 
+                allow="web-share" 
+                sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation">
+        </iframe>
         <div class="gamma-blocker"></div>
     </div>
 
@@ -122,6 +126,14 @@
             Correo
         </a>
     </footer>
+
+    <script>
+        window.addEventListener('message', function(e) {
+            if (e.data && typeof e.data === 'string' && e.data.includes('wa.me')) {
+                window.open(e.data, '_blank');
+            }
+        });
+    </script>
 
 </body>
 </html>
