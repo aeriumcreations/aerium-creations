@@ -4,18 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Aerium Creations | Decoración de Eventos de Alto Impacto</title>
-    
-    <script>
-        // Si detecta que está atrapado en el navegador interno de WhatsApp o Facebook, intenta forzar la salida
-        var ua = navigator.userAgent || navigator.vendor || window.opera;
-        if ((ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1) || (ua.indexOf("WhatsApp") > -1)) {
-            // Añadimos un pequeño parámetro para limpiar la carga si es necesario
-            if(!window.location.hash) {
-                window.location.hash = 'v2';
-            }
-        }
-    </script>
-
     <style>
         body, html {
             margin: 0;
@@ -60,14 +48,14 @@
         .contact-footer {
             background: linear-gradient(145deg, #1f1f1f, #151515);
             border-top: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 14px 20px;
+            padding: 12px 10px;
             display: flex;
             justify-content: center;
             align-items: center;
             box-sizing: border-box;
             z-index: 9999; 
             position: relative;
-            gap: 15px;
+            gap: 8px; /* Espacio reducido para que quepan bien los 3 en celular */
             box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.5);
         }
 
@@ -75,17 +63,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 6px;
             text-decoration: none;
             color: #ffffff;
-            font-size: 14px; 
+            font-size: 12px; /* Un poco más pequeña para pantallas chicas */
             font-weight: 600;
-            letter-spacing: 0.3px;
-            padding: 12px 20px;
+            letter-spacing: 0.1px;
+            padding: 10px 8px;
             border-radius: 50px; 
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
             flex: 1; 
-            max-width: 220px; 
+            max-width: 140px; 
             white-space: nowrap; 
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
         }
@@ -98,17 +86,20 @@
 
         .btn-whatsapp {
             background: linear-gradient(135deg, #25D366, #128C7E);
-            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .btn-tiktok {
+            background: #000000;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .btn-email {
             background: linear-gradient(135deg, #ea4335, #c5221f);
-            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
         }
 
         .icon {
-            width: 20px;
-            height: 20px;
+            width: 16px;
+            height: 16px;
             object-fit: contain;
             display: inline-block;
             vertical-align: middle;
@@ -119,9 +110,8 @@
 
     <div class="iframe-wrapper">
         <iframe class="web-container" 
-                src="https://mundo-magico-globos-iwe6g15.gamma.site/?embed=true"
-                allow="autoplay; encrypted-media; web-share"
-                sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox">
+                src="https://mundo-magico-globos-iwe6g15.gamma.site/"
+                loading="eager">
         </iframe>
         <div class="gamma-blocker"></div>
     </div>
@@ -131,6 +121,12 @@
             <img class="icon" src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
             WhatsApp
         </a>
+
+        <a href="https://www.tiktok.com/@yeli190387" target="_blank" class="contact-button btn-tiktok">
+            <img class="icon" src="https://cdn-icons-png.flaticon.com/512/3046/3046124.png" alt="TikTok">
+            TikTok
+        </a>
+
         <a href="mailto:aeriumcreations@gmail.com?subject=Cotización%20de%20Decoración" class="contact-button btn-email">
             <img class="icon" src="https://cdn-icons-png.flaticon.com/512/5968/5968534.png" alt="Email">
             Correo
